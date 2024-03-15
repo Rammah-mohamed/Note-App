@@ -7,19 +7,19 @@ const addBox = document.querySelector(".add-note"),
 
 const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-// fetch the note array from the local storage
+//Fetch the note array from the local storage
 let notes = JSON.parse(localStorage.getItem("notes") || "[]");
 
 let isUpdated = false,
 	updateId;
 
-//show the popup when adding a new note
+//Show the popup when add button was clicked
 addBox.addEventListener("click", () => {
 	titleTag.focus();
 	popupBox.classList.add("show");
 });
 
-//close the popups and reset all values
+//Close the popup and reset all values
 close.addEventListener("click", () => {
 	isUpdated = false;
 	popupBox.classList.remove("show");
@@ -36,11 +36,11 @@ addNote.addEventListener("click", (e) => {
 		noteDiscription = discriptionTag.value,
 		noteObj;
 
-	//check if the user inter title note or discription to create a new note
+	//check if the user enter title note or discription to create a new note
 	if (noteTitle || noteDiscription) {
 		let noteDate = new Date(),
 			month = months[noteDate.getMonth()],
-			day = noteDate.getDay();
+			day = noteDate.getDate();
 		year = noteDate.getFullYear();
 
 		noteObj = {
@@ -67,7 +67,7 @@ addNote.addEventListener("click", (e) => {
 	showData();
 });
 
-//show the data in the note array
+//Insert the data in the note array
 function showData() {
 	document.querySelectorAll(".note").forEach((note) => note.remove());
 	notes.forEach((note, index) => {
@@ -85,7 +85,7 @@ function showData() {
 		</div>
 		</footer>
 						</div>`;
-		//insert all note after add box
+		//insert all notes after add box
 		addBox.insertAdjacentHTML("afterend", noteContent);
 	});
 }
