@@ -1,6 +1,6 @@
 # Note-App
-## I created this app with JavaScript. And It has these features :
-#### 1- The user can add unlimited notes.
-#### 2- The notes will stored in the user's browser local storage.
-#### 3- The user can delete or edit the note and the changes will stored in the local storage.
+## Insides: 
+#### - Used local storage method to store the notes in the user local browser.
+#### - Used Date object to get the date that the note was created.
+#### - Used flex box to position and centarize the notes.
 ## The live app url is here:  https://rammah-mohamed.github.io/Note-App
